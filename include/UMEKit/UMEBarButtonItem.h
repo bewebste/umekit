@@ -24,6 +24,7 @@ typedef enum {
     UMEBarButtonItemStylePlain,    // shows glow when pressed
     UMEBarButtonItemStyleBack,
     UMEBarButtonItemStyleDone,
+	UMEBarButtonItemStyleCustomView
 } UMEBarButtonItemStyle;
 
 typedef enum {

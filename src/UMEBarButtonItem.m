@@ -20,7 +20,6 @@
 #import "UMEBarButtonItemButton.h"
 #import "UMEFlippedView.h"
 
-#define CUSTOM_VIEW_FLAG 500
 #define MIN_HEIGHT 44
 #define MIN_WIDTH 40
 
@@ -155,7 +154,7 @@
 
 
 - (id)initWithCustomView:(NSView *)v {
-    self = [self initWithTitle:nil style:CUSTOM_VIEW_FLAG target:nil action:nil];
+    self = [self initWithTitle:nil style:UMEBarButtonItemStyleCustomView target:nil action:nil];
     self.customView = v;
     return self;
 }
@@ -172,7 +171,7 @@
 - (id)initWithTitle:(NSString *)aTitle style:(UMEBarButtonItemStyle)aStyle target:(id)aTarget action:(SEL)sel {
     if ((self = [super init])) {
         
-        if (CUSTOM_VIEW_FLAG == aStyle) {
+        if (UMEBarButtonItemStyleCustomView == aStyle) {
             self.style = UMEBarButtonItemStylePlain;
         } else {
             self.button = [[[UMEBarButtonItemButton alloc] initWithFrame:NSZeroRect] autorelease];
@@ -186,7 +185,7 @@
         self.action = sel;
         self.barStyle = UMEBarStyleDefault;
         
-        if (CUSTOM_VIEW_FLAG != aStyle) {
+        if (UMEBarButtonItemStyleCustomView != aStyle) {
             self.customView = [[[UMEFlippedView alloc] initWithFrame:NSZeroRect] autorelease];
         }
     }
